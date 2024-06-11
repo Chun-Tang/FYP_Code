@@ -1,0 +1,24 @@
+sudo apt-get install libsm6
+
+sudo add-apt-repository ppa:deadsnakes/ppa
+sudo apt-get update
+sudo apt install python3.6
+sudo apt install python3.6-venv
+
+mkdir leafnet_env
+python3.6 -m venv leafnet_env
+. leafnet_env/bin/activate 
+
+git clone https://github.com/zhouyulab/leafnet.git
+cd leafnet
+python pip install --upgrade pip
+python pip install -r requirements.txt
+
+sudo apt install python3.6-tk
+
+python -m leafnet.leafnet_gui ###(not tested)
+python -m leafnet.leafnet_cli
+
+python -m leafnet.leafnet_cli -i /mnt/c/Users/Chun/Stomata -o /mnt/c/Users/Chun/Stomata2 -m ALL -r
+
+
